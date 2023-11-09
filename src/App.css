@@ -17,7 +17,7 @@ align-items: center;
 
 }
 
-.inputbox button{
+.inputbox input[type='submit']{
   padding: 10px;
   margin-top:10px;
   width: 70px;
@@ -35,6 +35,8 @@ border-radius: 10px;
   padding: 5px;
   border: 1px solid blue;
   border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 .checked{
   text-decoration: line-through;
@@ -42,4 +44,10 @@ border-radius: 10px;
 .unchecked{
   text-decoration: none;
 
+}
+.delete{
+  width: 15px;
+  margin-right: 30px;
+  margin-bottom:5px;
+  user-select: none; /* Standard syntax */
 }

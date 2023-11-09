@@ -1,16 +1,24 @@
-const InputBox = ({setter}) => {
-  
-    return ( 
-        <div className="inputbox">
-        <input type="text" id="inp"/>
-        <button onClick={(ev)=>{
-            let input = document.querySelector('#inp')
-            if (input.value.trim()){
-                setter(ev,input.value.trim());
-            }
-            input.value = ''
+import { useState } from "react"
+const InputBox = ({ setter }) => {
+    const [rawinp, setRawinp] = useState('')
+    const handleSubmit = (ev) => {
+        ev.preventDefault()
+        if (rawinp.length) {
+            setter(rawinp)
+        }
+        setRawinp('')
+        ev.target.reset()
+    }
+    const inputChange = (ev) => {
+        setRawinp(ev.target.value)
+    }
 
-    }}>Add</button>
+    return (
+        <div className="inputbox">
+            <form onSubmit={handleSubmit}>
+                <input type="text" id="inp" onChange={inputChange} autoFocus />
+                <input type="submit" value="submit" />
+            </form>
         </div>
     );
 }
