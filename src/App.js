@@ -19,25 +19,26 @@ function App() {
   const removeTodo = (id) => {
     setTodo(todo.filter((data) => data.id !== id))
   }
-  const isDone = (ev, id) => {
+  const todoListner = (ev, id) => {
     if (ev.target.classList.contains('delete')) {
+      removeTodo(id)
       return
     }
-    const new_todo = todo.map((to) => {
-      if (to.id === id) {
-        to.done = !to.done
+    const new_todo = todo.map((todo) => {
+      if (todo.id === id) {
+        todo.done = !todo.done
       }
-      return to
+      return todo
     })
     setTodo(new_todo)
-    console.log(id)
   }
   return (
     <div className="App">
+      <h1>TODOLISTS</h1>
       <InputBox setter={setter} />
       {
         todo.length > 0 &&
-        <TodoList list={todo} isDone={isDone} removeTodo={removeTodo} />
+        <TodoList list={todo} todoListner={todoListner}/>
 
       }
     </div>

@@ -1,3 +1,7 @@
+body{
+  background-color: #072e33;
+  color: white;
+}
 .App {
 display: flex;
 flex-direction: column;
@@ -14,6 +18,9 @@ align-items: center;
   margin: 0 20px;
   outline: none;
   width: 500px;
+  border:solid 2px #072e33;
+  color: white;
+  background-color: #05161A;
 
 }
 
@@ -25,16 +32,17 @@ align-items: center;
 
 .todolist{
 width: 500px;
-background-color: lightblue;
-padding: 10px;
-border: 1px solid blue;
+padding: 3px;
+background-color: #05161A;
+border: 1px solid  #072e33;
 border-radius: 10px;
 }
 .todo{
   margin: 10px;
   padding: 5px;
-  border: 1px solid blue;
-  border-radius: 10px;
+  border: 1px solid  #072e33;
+  background-color: #05161A;
+  border-radius: 7px;
   display: flex;
   justify-content: space-between;
 }
@@ -48,6 +56,12 @@ border-radius: 10px;
 .delete{
   width: 15px;
   margin-right: 30px;
+  margin-left: 10px;
   margin-bottom:5px;
   user-select: none; /* Standard syntax */
+}
+.truncate{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -1,10 +1,10 @@
-const Todo = ({ todo, isDone, removeTodo }) => {
+const Todo = ({ todo, todoListner }) => {
     return (
-        <div className="todo" onClick={(ev) => isDone(ev, todo.id)}>
-            <div className={`${todo.done ? "checked" : "unchecked"}`} >
-                <span>{todo.tsk}</span>
+        <div className="todo" onClick={(ev) => todoListner(ev, todo.id)}>
+            <div className={`${todo.done ? "checked" : "unchecked"} truncate`} >
+                <span>{todo.task}</span>
             </div>
-            <span className="delete" onClick={() => { removeTodo(todo.id) }}>x</span>
+            <span className="delete">x</span>
         </div>
     )
 }
